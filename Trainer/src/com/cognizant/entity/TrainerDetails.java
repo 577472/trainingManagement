@@ -8,16 +8,20 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class TrainerDetails {
 	
 	@Id
 	private Integer trainerId;
+	
 	private String Trianername;
 	private String collageName;
 	private String domain;
 	
-	@OneToMany(mappedBy="TrainerDetails" , cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="TrainerDetails" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonBackReference
 	private List<TrainingShedule> list;
 
 	public Integer getTrainerId() {

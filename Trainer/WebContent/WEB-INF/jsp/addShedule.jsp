@@ -19,9 +19,6 @@
 			modelAttribute="TrainingShedule" name="Form">
 
 
-		<%-- <form:form method="POST"
-			commandName="/TrainerManagement/mvc/applyShedule"
-			modelAttribute="schedule" name="Form"> --%>
 			<table>
 
 				<tr>
@@ -33,8 +30,8 @@
 					<td><form:errors path="TrainerDetails.Trianername"
 							cssClass="error" /></td>
 					<td><span
-						ng-show="Form.TrainerName.$error.required && !Form.TrainerDetails.Trianername.$pristine">Transaction
-							description is required</span></td>
+						ng-show="Form.TrainerName.$error.required && !Form.TrainerDetails.Trianername.$pristine">Trainer
+							name is required</span></td>
 
 					<td><span
 						ng-show="Form.TrainerDetails.Trianername.$error.pattern && !Form.TrainerDetails.Trianername.$pristine">Only
@@ -45,9 +42,9 @@
 					<td>Duration :</td>
 					<td><form:select path="Duration" ng-model="Duration">
 							<option value="" disabled selected>Select Duration</option>
-							<option value="Duration">120</option>
-							<option value="Duration">180</option>
-							<option value="Duration">240</option>
+							<option value="120">120</option>
+							<option value="180">180</option>
+							<option value="240">240</option>
 						</form:select></td>
 					<td><form:errors path="Duration" cssClass="error" /></td>
 
@@ -93,20 +90,13 @@
 					<td><span
 						ng-show="Form.TrainerDetails.Domain.$error.required && !Form.TrainerDetails.Domain.$pristine">Transaction
 							description is required</span></td>
-				
-				
-				
+	
 				<tr>
 					<td>Start Date :</td>
-					<td><form:input path="startDate"
-							placeholder="StartDate" maxlength="30" type="Date"
-							ng-model="startDate" required="true"
-							ng-pattern="/^[A-Za-z\b \b]{1,30}$/" /></td>
-					<td><form:errors path="startDate"
-							cssClass="error" /></td>
-					<td><span
-						ng-show="Form.startDate.$error.required && !Form.startDate.$pristine">Transaction
-							description is required</span></td>
+					<td><form:input path="startDate" type="Date" ng-model="startDate" required="true" /></td>
+					<td><form:errors path="startDate" cssClass="error" /></td>
+							
+					
 				
 				<tr>
 					<td></td>

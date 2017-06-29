@@ -1,8 +1,9 @@
 package test.java;
 
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,17 +23,12 @@ public class ShowSheduleTest {
 	
 	@Test
 	public void retriveShedule(){
-		 Date date;
-		SimpleDateFormat sdf =new SimpleDateFormat("yyyy/MM/dd");
-		String userInput = "2009/02/20";
-		try {
-			date = (Date) sdf.parse(userInput);
+		 Date date=new Date(2017,06,29);
+	
+			
 			System.out.println(date);
 			dao.retriveShedule(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 		
 	}

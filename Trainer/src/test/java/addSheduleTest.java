@@ -1,9 +1,10 @@
 package test.java;
 
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import org.junit.Test;
@@ -39,21 +40,15 @@ public class addSheduleTest {
 	public void addShedule(){
 		TrainerDetails obj=new TrainerDetails(1200,"ASD","roc","java");
 		
-		SimpleDateFormat sdf =new SimpleDateFormat("yyyy/MM/dd");
-		String userInput = "2009/02/20";
-	      Date date;
-		try {
-			date = (Date) sdf.parse(userInput);
+		
+	      Date date=new Date(2017,06,29);
 			System.out.println(date);
 			TrainingShedule obj1=new TrainingShedule(date,45678,obj);
 			list.add(obj1);
 			obj.setList(list);
 			
 			dao.addShedule(obj);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	
 	    

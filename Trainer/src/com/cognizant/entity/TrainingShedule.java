@@ -1,6 +1,8 @@
 package com.cognizant.entity;
 
-import java.util.Date;
+
+
+import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -10,6 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class TrainingShedule {
 	
@@ -19,7 +24,9 @@ public class TrainingShedule {
 	private Date startDate;
 	private Integer Duration;
 	
-	@ManyToOne( fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@ManyToOne( fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JsonManagedReference
+	@JsonIgnore
 	@JoinColumn(name="trainerId")
 	private TrainerDetails TrainerDetails;
 
@@ -62,12 +69,6 @@ public class TrainingShedule {
 		
 		// TODO Auto-generated constructor stub
 	}
-
-	/*@Override
-	public String toString() {
-		return "TrainingShedule [sheduleId=" + sheduleId + ", startDate=" + startDate + ", Duration=" + Duration
-				+ "]";
-	}*/
 
 	public TrainingShedule( Date startDate, Integer duration,
 			com.cognizant.entity.TrainerDetails trainerDetails) {

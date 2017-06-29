@@ -11,20 +11,8 @@
 	<!-- Please add your application links by replacing the below sample links -->
 	<br>
 	<a href="mvc/applyshedule">Apply</a>
-	<a href="mvc/view">view</a>
-	
-	<!-- <tr>mvc/view
-				<td><button>
-					<a
-						href="mvc/applyshedule">Apply
-						Home Loan</a>
-				</button></td>
-				<td><button>
-					<a
-						href="mvc/view">View
-						Home Loan</a>
-				</button></td>
-				<button> -->
+	<a href="mvc/viewSchedule">view</a>
+
 
 </body>
 </html>
